@@ -287,6 +287,10 @@ Test set: Average loss: 0.4997, Accuracy: 8301/10000 (83.01%)
 
 ## Conclusion
 Below graph shows accruacy and loss of validation set for both model architecture.
+#### Model1 - Represent Netv1 model architecture plot   
+#### Model2 - Represent Netv2 model architecture plot
 ![Alt text](repo_util/graph_6.JPG?raw=true "model architecture")
 
 Based on above graph following conclusion can be drawn:
+1. We achieved requierd goals of the project.
+2. Dilation based convolutation can drop overall accuracy if not implemented correctly.
