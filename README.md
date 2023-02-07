@@ -245,6 +245,45 @@ Estimated Total Size (MB): 9.78
 ```
 
 ## Training logs
+Below is the snippet of last  5 epochs training logs as the model is trained for 80 epochs. Here each epoch consist of two Test set losses. One is for Netv1() and other is for Netv2().
+```
+EPOCH: 75
+`Netv1 loss`
+Loss=0.5562683939933777 Batch_id=390 Accuracy=81.61: 100%|██████████| 391/391 [00:20<00:00, 19.34it/s]
+Test set: Average loss: 0.4296, Accuracy: 8536/10000 (85.36%)
+
+`Netv2 loss`
+Loss=0.6562783718109131 Batch_id=390 Accuracy=77.22: 100%|██████████| 391/391 [00:21<00:00, 17.84it/s]
+Test set: Average loss: 0.4966, Accuracy: 8304/10000 (83.04%)
+
+EPOCH: 76
+Loss=0.4930347800254822 Batch_id=390 Accuracy=81.56: 100%|██████████| 391/391 [00:19<00:00, 19.92it/s]
+Test set: Average loss: 0.4292, Accuracy: 8523/10000 (85.23%)
+
+Loss=0.6153714656829834 Batch_id=390 Accuracy=77.45: 100%|██████████| 391/391 [00:22<00:00, 17.61it/s]
+Test set: Average loss: 0.4963, Accuracy: 8301/10000 (83.01%)
+
+EPOCH: 77
+Loss=0.4474758505821228 Batch_id=390 Accuracy=81.32: 100%|██████████| 391/391 [00:20<00:00, 19.32it/s]
+Test set: Average loss: 0.4288, Accuracy: 8536/10000 (85.36%)
+
+Loss=0.6069265604019165 Batch_id=390 Accuracy=77.25: 100%|██████████| 391/391 [00:22<00:00, 17.13it/s]
+Test set: Average loss: 0.4980, Accuracy: 8310/10000 (83.10%)
+
+EPOCH: 78
+Loss=0.5485225915908813 Batch_id=390 Accuracy=81.23: 100%|██████████| 391/391 [00:19<00:00, 19.87it/s]
+Test set: Average loss: 0.4285, Accuracy: 8535/10000 (85.35%)
+
+Loss=0.8768221139907837 Batch_id=390 Accuracy=77.46: 100%|██████████| 391/391 [00:22<00:00, 17.67it/s]
+Test set: Average loss: 0.4979, Accuracy: 8304/10000 (83.04%)
+
+EPOCH: 79
+Loss=0.49773159623146057 Batch_id=390 Accuracy=81.32: 100%|██████████| 391/391 [00:19<00:00, 19.86it/s]
+Test set: Average loss: 0.4282, Accuracy: 8543/10000 (85.43%)
+
+Loss=0.6468020677566528 Batch_id=390 Accuracy=77.42: 100%|██████████| 391/391 [00:22<00:00, 17.36it/s]
+Test set: Average loss: 0.4997, Accuracy: 8301/10000 (83.01%)
+```
 
 ## Conclusion
 
