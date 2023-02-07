@@ -52,7 +52,16 @@ To get started with the repo is really easy. Follow below steps to run everythin
 3. That's it! Now you can execute the cell and train this three models. Other detials are commented in the main notebook.
 
 ## Data representation
-In this assignment we are using [CIFAR10]()
+In this assignment I am using [CIFAR10](https://www.cs.toronto.edu/~kriz/cifar.html) with this dataset I am applying following augmentation on the top:
+1. `HorizontalFlip` - Fliping the image along horizontal axis.
+2. `ShiftscaleRotate` - Perform transformation randomly, this transformation includes shifting of image, scaling and rotating.
+3. `CoarseDropOut` - Overlay a rectangle patch(half the size of original image) on a image randomly. (simulate object hindarence)
+4. `ColorJitter` - Randomly changes the brightness, contrast, and saturation of an image. (simulate lighting condition)
+5. `ToGray` - Randomly change RBG to gray-scale. 
+6. `Normalize` - Normalize image i.e. zero centring (zero mean) and scaling (one std)
+
+Below is the graph representing the input training dataset after appling all augmentations c .
+
 
 ## Model representation
 
