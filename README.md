@@ -286,4 +286,7 @@ Test set: Average loss: 0.4997, Accuracy: 8301/10000 (83.01%)
 ```
 
 ## Conclusion
+Below graph shows accruacy and loss of validation set for both model architecture.
+![Alt text](repo_util/graph_6.JPG?raw=true "model architecture")
 
+Based on above graph following conclusion can be drawn:
