@@ -61,9 +61,11 @@ In this assignment I am using [CIFAR10](https://www.cs.toronto.edu/~kriz/cifar.h
 6. `Normalize` - Normalize image i.e. zero centring (zero mean) and scaling (one std)
 
 Below is the graph representing the input training dataset after appling all augmentations c .
-
+![Alt text](repo_util/data_6.JPG?raw=true "model architecture")
 
 ## Model representation
+In this assignment, I am using two different architecture `Netv1()` and `Netv2()`. Below are more discription on each model used in the training.
+- `Netv1()` - `Netv
 
 ## Training logs
 
