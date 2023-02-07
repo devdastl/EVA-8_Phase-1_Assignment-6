@@ -69,6 +69,180 @@ In this assignment, I am using two different architecture `Netv1()` and `Netv2()
 - `Netv2()` - This architecture mainly uses uses 5x5-kernel with dilation of 2 and stride of 1 to reduce the shape of the feature map instead of Max-pooling.
 
 Below is a snapshot of model arcitecture for both model `netV1()` and `netV2()`
+```
+-----------------------------------Netv1() arcitecture with 3x3 stride 2 pooling------------------------
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1           [-1, 16, 32, 32]             432
+       BatchNorm2d-2           [-1, 16, 32, 32]              32
+              ReLU-3           [-1, 16, 32, 32]               0
+           Dropout-4           [-1, 16, 32, 32]               0
+            Conv2d-5           [-1, 32, 30, 30]           4,608
+       BatchNorm2d-6           [-1, 32, 30, 30]              64
+              ReLU-7           [-1, 32, 30, 30]               0
+           Dropout-8           [-1, 32, 30, 30]               0
+            Conv2d-9           [-1, 32, 30, 30]             288
+           Conv2d-10           [-1, 32, 30, 30]           1,024
+DepthwiseSeparable-11           [-1, 32, 30, 30]               0
+      BatchNorm2d-12           [-1, 32, 30, 30]              64
+             ReLU-13           [-1, 32, 30, 30]               0
+          Dropout-14           [-1, 32, 30, 30]               0
+           Conv2d-15           [-1, 32, 15, 15]           9,216
+      BatchNorm2d-16           [-1, 32, 15, 15]              64
+             ReLU-17           [-1, 32, 15, 15]               0
+          Dropout-18           [-1, 32, 15, 15]               0
+           Conv2d-19           [-1, 32, 15, 15]           9,216
+      BatchNorm2d-20           [-1, 32, 15, 15]              64
+             ReLU-21           [-1, 32, 15, 15]               0
+          Dropout-22           [-1, 32, 15, 15]               0
+           Conv2d-23           [-1, 64, 13, 13]          18,432
+      BatchNorm2d-24           [-1, 64, 13, 13]             128
+             ReLU-25           [-1, 64, 13, 13]               0
+          Dropout-26           [-1, 64, 13, 13]               0
+           Conv2d-27           [-1, 64, 13, 13]             576
+           Conv2d-28           [-1, 64, 13, 13]           4,096
+DepthwiseSeparable-29           [-1, 64, 13, 13]               0
+      BatchNorm2d-30           [-1, 64, 13, 13]             128
+             ReLU-31           [-1, 64, 13, 13]               0
+          Dropout-32           [-1, 64, 13, 13]               0
+           Conv2d-33             [-1, 64, 7, 7]          36,864
+      BatchNorm2d-34             [-1, 64, 7, 7]             128
+             ReLU-35             [-1, 64, 7, 7]               0
+          Dropout-36             [-1, 64, 7, 7]               0
+           Conv2d-37             [-1, 64, 7, 7]          36,864
+      BatchNorm2d-38             [-1, 64, 7, 7]             128
+             ReLU-39             [-1, 64, 7, 7]               0
+          Dropout-40             [-1, 64, 7, 7]               0
+           Conv2d-41             [-1, 64, 5, 5]          36,864
+      BatchNorm2d-42             [-1, 64, 5, 5]             128
+             ReLU-43             [-1, 64, 5, 5]               0
+          Dropout-44             [-1, 64, 5, 5]               0
+           Conv2d-45             [-1, 64, 5, 5]             576
+           Conv2d-46             [-1, 64, 5, 5]           4,096
+DepthwiseSeparable-47             [-1, 64, 5, 5]               0
+      BatchNorm2d-48             [-1, 64, 5, 5]             128
+             ReLU-49             [-1, 64, 5, 5]               0
+          Dropout-50             [-1, 64, 5, 5]               0
+           Conv2d-51             [-1, 32, 7, 7]           2,048
+      BatchNorm2d-52             [-1, 32, 7, 7]              64
+             ReLU-53             [-1, 32, 7, 7]               0
+          Dropout-54             [-1, 32, 7, 7]               0
+           Conv2d-55             [-1, 32, 5, 5]           9,216
+      BatchNorm2d-56             [-1, 32, 5, 5]              64
+             ReLU-57             [-1, 32, 5, 5]               0
+          Dropout-58             [-1, 32, 5, 5]               0
+           Conv2d-59             [-1, 32, 5, 5]             288
+           Conv2d-60             [-1, 32, 5, 5]           1,024
+DepthwiseSeparable-61             [-1, 32, 5, 5]               0
+      BatchNorm2d-62             [-1, 32, 5, 5]              64
+             ReLU-63             [-1, 32, 5, 5]               0
+          Dropout-64             [-1, 32, 5, 5]               0
+           Conv2d-65             [-1, 10, 5, 5]             320
+        AvgPool2d-66             [-1, 10, 1, 1]               0
+================================================================
+Total params: 177,296
+Trainable params: 177,296
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.01
+Forward/backward pass size (MB): 4.39
+Params size (MB): 0.68
+Estimated Total Size (MB): 5.07
+----------------------------------------------------------------
+-----------------------------------Netv2() arcitecture with dilated conv pooling------------------------
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1           [-1, 16, 32, 32]             432
+       BatchNorm2d-2           [-1, 16, 32, 32]              32
+              ReLU-3           [-1, 16, 32, 32]               0
+           Dropout-4           [-1, 16, 32, 32]               0
+            Conv2d-5           [-1, 32, 30, 30]           4,608
+       BatchNorm2d-6           [-1, 32, 30, 30]              64
+              ReLU-7           [-1, 32, 30, 30]               0
+           Dropout-8           [-1, 32, 30, 30]               0
+            Conv2d-9           [-1, 32, 30, 30]             288
+           Conv2d-10           [-1, 32, 30, 30]           1,024
+DepthwiseSeparable-11           [-1, 32, 30, 30]               0
+      BatchNorm2d-12           [-1, 32, 30, 30]              64
+             ReLU-13           [-1, 32, 30, 30]               0
+          Dropout-14           [-1, 32, 30, 30]               0
+           Conv2d-15           [-1, 32, 30, 30]           1,024
+      BatchNorm2d-16           [-1, 32, 30, 30]              64
+             ReLU-17           [-1, 32, 30, 30]               0
+          Dropout-18           [-1, 32, 30, 30]               0
+           Conv2d-19           [-1, 32, 24, 24]          25,600
+      BatchNorm2d-20           [-1, 32, 24, 24]              64
+             ReLU-21           [-1, 32, 24, 24]               0
+          Dropout-22           [-1, 32, 24, 24]               0
+           Conv2d-23           [-1, 32, 24, 24]           9,216
+      BatchNorm2d-24           [-1, 32, 24, 24]              64
+             ReLU-25           [-1, 32, 24, 24]               0
+          Dropout-26           [-1, 32, 24, 24]               0
+           Conv2d-27           [-1, 64, 22, 22]          18,432
+      BatchNorm2d-28           [-1, 64, 22, 22]             128
+             ReLU-29           [-1, 64, 22, 22]               0
+          Dropout-30           [-1, 64, 22, 22]               0
+           Conv2d-31           [-1, 64, 22, 22]             576
+           Conv2d-32           [-1, 64, 22, 22]           4,096
+DepthwiseSeparable-33           [-1, 64, 22, 22]               0
+      BatchNorm2d-34           [-1, 64, 22, 22]             128
+             ReLU-35           [-1, 64, 22, 22]               0
+          Dropout-36           [-1, 64, 22, 22]               0
+           Conv2d-37           [-1, 32, 22, 22]           2,048
+      BatchNorm2d-38           [-1, 32, 22, 22]              64
+             ReLU-39           [-1, 32, 22, 22]               0
+          Dropout-40           [-1, 32, 22, 22]               0
+           Conv2d-41           [-1, 32, 14, 14]          25,600
+      BatchNorm2d-42           [-1, 32, 14, 14]              64
+             ReLU-43           [-1, 32, 14, 14]               0
+          Dropout-44           [-1, 32, 14, 14]               0
+           Conv2d-45           [-1, 64, 14, 14]          18,432
+      BatchNorm2d-46           [-1, 64, 14, 14]             128
+             ReLU-47           [-1, 64, 14, 14]               0
+          Dropout-48           [-1, 64, 14, 14]               0
+           Conv2d-49           [-1, 64, 12, 12]          36,864
+      BatchNorm2d-50           [-1, 64, 12, 12]             128
+             ReLU-51           [-1, 64, 12, 12]               0
+          Dropout-52           [-1, 64, 12, 12]               0
+           Conv2d-53           [-1, 64, 12, 12]             576
+           Conv2d-54           [-1, 64, 12, 12]           4,096
+DepthwiseSeparable-55           [-1, 64, 12, 12]               0
+      BatchNorm2d-56           [-1, 64, 12, 12]             128
+             ReLU-57           [-1, 64, 12, 12]               0
+          Dropout-58           [-1, 64, 12, 12]               0
+           Conv2d-59           [-1, 32, 12, 12]           2,048
+      BatchNorm2d-60           [-1, 32, 12, 12]              64
+             ReLU-61           [-1, 32, 12, 12]               0
+          Dropout-62           [-1, 32, 12, 12]               0
+           Conv2d-63             [-1, 32, 6, 6]          25,600
+      BatchNorm2d-64             [-1, 32, 6, 6]              64
+             ReLU-65             [-1, 32, 6, 6]               0
+          Dropout-66             [-1, 32, 6, 6]               0
+           Conv2d-67             [-1, 32, 4, 4]           9,216
+      BatchNorm2d-68             [-1, 32, 4, 4]              64
+             ReLU-69             [-1, 32, 4, 4]               0
+          Dropout-70             [-1, 32, 4, 4]               0
+           Conv2d-71             [-1, 32, 4, 4]             288
+           Conv2d-72             [-1, 32, 4, 4]           1,024
+DepthwiseSeparable-73             [-1, 32, 4, 4]               0
+      BatchNorm2d-74             [-1, 32, 4, 4]              64
+             ReLU-75             [-1, 32, 4, 4]               0
+          Dropout-76             [-1, 32, 4, 4]               0
+           Conv2d-77             [-1, 10, 4, 4]             320
+        AvgPool2d-78             [-1, 10, 1, 1]               0
+================================================================
+Total params: 192,784
+Trainable params: 192,784
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.01
+Forward/backward pass size (MB): 9.03
+Params size (MB): 0.74
+Estimated Total Size (MB): 9.78
+----------------------------------------------------------------
+```
 
 ## Training logs
 
