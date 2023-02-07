@@ -51,3 +51,12 @@ To get started with the repo is really easy. Follow below steps to run everythin
 2. Run the first cell. This cell will git clone this repo so that all fucntions are available in your runtime.
 3. That's it! Now you can execute the cell and train this three models. Other detials are commented in the main notebook.
 
+## Data representation
+In this assignment we are using [CIFAR10]()
+
+## Model representation
+
+## Training logs
+
+## Conclusion
+
