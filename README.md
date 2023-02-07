@@ -4,8 +4,8 @@ This is the assignment of 6th session in phase-1 of EVA-8 from TSAI.
 ## Introduction
 
 ### Objective
-Objective of this assignment is to build three CNN based network which will take [CIFAR10 Dataset](<http://yann.lecun.com/exdb/mnist/>) and should have following properties.
-1. This three networks should be following:
+Objective of this assignment is to build a CNN based network which will take [CIFAR10 Dataset](<http://yann.lecun.com/exdb/mnist/>) and should have following properties.
+1. This network architecture should have following properties:
     - Network should not use any Max Pooling, feature map size reduction should be done by convolution process.
     - Receptive Field of the model should be upto 44x44.
     - one of the layers must use Depthwise Separable Convolution
@@ -65,7 +65,10 @@ Below is the graph representing the input training dataset after appling all aug
 
 ## Model representation
 In this assignment, I am using two different architecture `Netv1()` and `Netv2()`. Below are more discription on each model used in the training.
-- `Netv1()` - `Netv
+- `Netv1()` - This architecture mainly uses 3x3-kernel convolutaion of stride 2 to reduce the shape of feature map instead of using Max-Pooling. Netv1() model architecture is define inside `components/model.py` inside `Netv1()` class. This architecture also all the requirements as mentioned.
+- `Netv2()` - This architecture mainly uses uses 5x5-kernel with dilation of 2 and stride of 1 to reduce the shape of the feature map instead of Max-pooling.
+
+Below is a snapshot of model arcitecture for both model `netV1()` and `netV2()`
 
 ## Training logs
 
